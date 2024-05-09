@@ -96,29 +96,26 @@ public class PortaCD {
 
     }
 
-    public String confrontaInteraCollezione(PortaCD altraCollezione){
-        boolean trovato = true; 
+    public String confrontaInteraCollezione(PortaCD altraCollezione) {
+        boolean trovato = true;
         int posizione = 0;
         String soluzione = "";
-        int i=0;
-        int j=0;
-        while(trovato==true && posizione==dischi.length){
-            //int i=0;
-            if(dischi[j] != null && altraCollezione.cercaCDPerTitolo(dischi[i].getTitolo()) != -1){
+        int j = 0;
+        while (trovato == true && posizione == dischi.length) {
+            int i = 0;
+            while (trovato == true && posizione == dischi.length) {
+                if (dischi[j] != null && altraCollezione.cercaCDPerTitolo(dischi[i].getTitolo()) != -1) {
+                    i++;
+                } else {
+                    trovato = false;
+                }
                 j++;
-                i=0;
-        }else{
-            i++;
-            if(i==dischi.length-1){
-                trovato=false;
             }
         }
-    }
-
-        if (trovato == true){
-            soluzione="Sono uguali";
-        }else{
-            soluzione="Sono diverse";
+        if (trovato == true) {
+            soluzione = "Sono uguali";
+        } else {
+            soluzione = "Sono diverse";
         }
         return soluzione;
     }
