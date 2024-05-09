@@ -6,6 +6,15 @@ public class App {
         CD cd2 = new CD("Album 2", "Artista 2", 10, 50);
         CD cd3 = new CD("Album 3", "Artista 3", 8, 45);
 
+        PortaCD PortaCD2 = new PortaCD(3);
+        CD cd4 = new CD("Album 1", "Artista 1", 12, 60);
+        CD cd5 = new CD("Album 3", "Artista 3", 8, 45);
+        CD cd6 = new CD("Album 5", "Artista 23", 12, 620); 
+
+        PortaCD2.setCD(0, cd4);
+        PortaCD2.setCD(1, cd5);
+        PortaCD2.setCD(2, cd6);
+
         String confrontoDurate1 = cd1.confrontaDurata(cd2);
         System.out.println(confrontoDurate1);
 
@@ -34,18 +43,21 @@ public class App {
             System.out.println("Il CD '" + titoloDaCercare + "' non è presente nella collezione.");
         }
 
-        PortaCD PortaCD2 = new PortaCD(3);
-        CD cd4 = new CD("Album 1", "Artista 1", 12, 60);
-        CD cd5 = new CD("Album 3", "Artista 3", 8, 45);
-        CD cd6 = new CD("Album 5", "Artista 23", 12, 620); 
-        PortaCD2.setCD(0, cd4);
-        PortaCD2.setCD(1, cd5);
-        PortaCD2.setCD(2, cd6);
+        PortaCD PortaCD3 = new PortaCD(3);
+        CD cd7 = new CD("Album 1", "Artista 1", 12, 60);
+        CD cd8 = new CD("Album 3", "Artista 3", 8, 45);
+        CD cd9 = new CD("Album 5", "Artista 23", 12, 620); 
+        PortaCD3.setCD(0, cd7);
+        PortaCD3.setCD(1, cd8);
+        PortaCD3.setCD(2, cd9);
 
         int cdInComune = PortaCD1.confrontaCollezioneDischi(PortaCD2);
         System.out.println("Numero di CD in comune tra portaCD1 e portaCD2: " + cdInComune);
 
         String portaCDUguali = PortaCD1.confrontaInteraCollezione(PortaCD2);
         System.out.println(portaCDUguali);
+
+        String portaCDUguali2 = PortaCD2.confrontaInteraCollezione(PortaCD3);
+        System.out.println(portaCDUguali2);
     }
 }
